@@ -1,4 +1,4 @@
-package hu.caiwan.example;
+package io.github.caiwan.example;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;

@@ -1,4 +1,4 @@
-package hu.caiwan.example;
+package io.github.caiwan.example.config;
 
 import javax.xml.ws.Endpoint;
 
@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import hu.caiwan.example.ws.HelloServiceImpl;
+import io.github.caiwan.example.ws.HelloServiceImpl;
 
 @Configuration
 public class ServiceEndpointConfiguration {

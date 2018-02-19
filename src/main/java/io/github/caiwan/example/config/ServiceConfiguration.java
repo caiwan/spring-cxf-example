@@ -1,4 +1,4 @@
-package hu.caiwan.example;
+package io.github.caiwan.example.config;
 
 import java.util.Properties;
 
@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.ws.soap.server.endpoint.SoapFaultDefinition;
 import org.springframework.ws.soap.server.endpoint.SoapFaultMappingExceptionResolver;
+
+import io.github.caiwan.example.MySOAPFaultResolver;
 
 @Configuration
 @Import(value=ServiceEndpointConfiguration.class)

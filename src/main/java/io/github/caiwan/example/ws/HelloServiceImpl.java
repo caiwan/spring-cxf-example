@@ -1,11 +1,14 @@
-package hu.caiwan.example.ws;
+package io.github.caiwan.example.ws;
 
 import javax.jws.WebService;
 
-import hu.caiwan.example.xml.HelloRequest;
-import hu.caiwan.example.xml.HelloResponse;
+import org.springframework.stereotype.Controller;
+
+import io.github.caiwan.example.dto.HelloRequest;
+import io.github.caiwan.example.dto.HelloResponse;
 
 @WebService(endpointInterface = "hu.caiwan.example.ws.HelloService")
+@Controller
 public class HelloServiceImpl implements HelloService {
 
 	public HelloResponse sayHello(HelloRequest person) {

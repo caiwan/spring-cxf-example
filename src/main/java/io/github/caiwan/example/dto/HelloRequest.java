@@ -1,4 +1,4 @@
-package hu.caiwan.example.xml;
+package io.github.caiwan.example.dto;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
