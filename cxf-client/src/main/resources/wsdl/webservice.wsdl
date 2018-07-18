@@ -1,0 +1,48 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.example.caiwan.github.io/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  name="HelloServiceImplService" targetNamespace="http://ws.example.caiwan.github.io/">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ws.example.caiwan.github.io/"
+                   version="1.0">
+            <xs:complexType name="helloRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="name" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="helloResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="helloMessage" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="sayHelloResponse">
+        <wsdl:part name="return" type="tns:helloResponse"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="sayHello">
+        <wsdl:part name="arg0" type="tns:helloRequest"></wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="HelloService">
+        <wsdl:operation name="sayHello">
+            <wsdl:input message="tns:sayHello" name="sayHello"></wsdl:input>
+            <wsdl:output message="tns:sayHelloResponse" name="sayHelloResponse"></wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="HelloServiceImplServiceSoapBinding" type="tns:HelloService">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="sayHello">
+            <soap:operation soapAction="" style="rpc"/>
+            <wsdl:input name="sayHello">
+                <soap:body namespace="http://ws.example.caiwan.github.io/" use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="sayHelloResponse">
+                <soap:body namespace="http://ws.example.caiwan.github.io/" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="HelloServiceImplService">
+        <wsdl:port binding="tns:HelloServiceImplServiceSoapBinding" name="HelloServiceImplPort">
+            <soap:address location="http://localhost:8080/cxf-contractless-webservice/services/Hello"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
