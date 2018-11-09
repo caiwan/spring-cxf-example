@@ -1,6 +1,6 @@
 # CXF Spring example
 
-An io.github.caiwan.example.example skeleton application utilizing *CXF* and
+A boilerplate/skeleton application utilizing *CXF* and
 *Spring Boot* utilizing both contralctless and contract first
 approaches of webservice building. A webservice cli-like
 io.github.caiwan.example.client is also provided.
